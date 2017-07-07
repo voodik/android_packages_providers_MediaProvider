@@ -110,7 +110,8 @@ public class MtpService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        mUnlocked = intent.getBooleanExtra(UsbManager.USB_DATA_UNLOCKED, false);
+//        mUnlocked = intent.getBooleanExtra(UsbManager.USB_DATA_UNLOCKED, false);
+        mUnlocked = true;
         if (LOGD) { Log.d(TAG, "onStartCommand intent=" + intent + " mUnlocked=" + mUnlocked); }
         synchronized (mBinder) {
             updateDisabledStateLocked();
